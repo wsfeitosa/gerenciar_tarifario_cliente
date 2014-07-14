@@ -10,6 +10,8 @@ $app = new Slim(array(
 		'name' => 'gerenciar_tarifario_cliente'
 ));
 
-$app->get('/','pog');
+$app->get('/','procurar_cliente');
+
+$app->post('/salvar','salvar');
 
 $app->run();

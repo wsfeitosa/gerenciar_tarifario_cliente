@@ -10,7 +10,11 @@ $app = new Slim(array(
 		'name' => 'gerenciar_tarifario_cliente'
 ));
 
-$app->get('/','procurar_cliente');
+$app->get('/procurar_cliente','procurar_cliente');
+
+$app->get('/:id_cliente','cadastrar_paises');
+
+$app->post('/listar_opcoes/','listar_opcoes_cliente');
 
 $app->post('/salvar','salvar');
 

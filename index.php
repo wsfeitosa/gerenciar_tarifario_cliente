@@ -12,7 +12,7 @@ $app = new Slim(array(
 
 $app->get('/procurar_cliente','procurar_cliente');
 
-$app->get('/:id_cliente','cadastrar_paises');
+$app->get('/cadastrar_paises/:id_cliente/:sentido','cadastrar_paises');
 
 $app->post('/listar_opcoes/','listar_opcoes_cliente');
 

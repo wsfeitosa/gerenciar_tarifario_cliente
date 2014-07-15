@@ -1,5 +1,9 @@
 $(document).ready(function(){
-			
+	
+	$("#sair").click(function(){
+		window.close();
+	});
+	
 	/** Autocompletar do nome dos clientes **/
 	$("#cliente").autocomplete({
 		

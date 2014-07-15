@@ -11,22 +11,30 @@
     <link href="/Libs/jquery-ui-1.10.4/css/redmond/jquery-ui-1.10.4.custom.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="/Libs/jquery-ui-1.10.4/js/jquery-1.10.2.js"></script>
     <script type="text/javascript" src="/Libs/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.js"></script>
-    <script type="text/javascript" src="/Clientes/gerenciar_tarifario_cliente/js/procurar_cliente.js"></script>
+    <script type="text/javascript" src="/Clientes/gerenciar_tarifario_cliente/js/listar_opcoes_cliente.js"></script>
 </head>
 <body>
 <form action="/Clientes/gerenciar_tarifario_cliente/index.php/listar_opcoes/" method="post">
     <div class="principal">
-        <p class="titulo">PROCURAR CLIENTE</p>
-        <div class="container_elemento">
-            <label class="label">Cliente</label>
-            <input type="text" id="cliente" name="cliente" value="" size="" />
-            <input type="hidden" id="id_cliente" name="id_cliente" value=""/>
-            <div id="cliente_selecionado"></div>
-        </div>                
-        <div class="botoes">
-            <label class="label">&nbsp;</label>
-            <input type="button" id="consultar" name="consultar" value="Consultar" />
-            <input type="button" id="sair" value="Sair" />            
+        <p class="titulo">RESTRIÇÕES DO TARIFÁRIO DO CLIENTE</p>
+        <h1><?php echo $cliente['cnpj'] . " => " . $cliente['razao'];?></h1>
+		<table class="tabela_scoa">
+		    <thead>
+		        <tr>
+		            <th colspan="2">Sentido</th>		            
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr>
+		            <td><a href="#" link="/Clientes/gerenciar_tarifario_cliente/index.php/cadastrar_paises/<?php echo $cliente['id_cliente']?>/EXP">Exportação</a></td>
+		            <td><a href="#" link="/Clientes/gerenciar_tarifario_cliente/index.php/cadastrar_paises/<?php echo $cliente['id_cliente']?>/IMP">Importação</a></td>
+		        </tr>		        
+		    </tbody>
+		</table>
+		<div class="botoes">
+            <label class="label">&nbsp;</label>            
+            <input type="button" id="voltar" value="Voltar" />
+            <input type="button" id="sair" value="Sair" />
         </div>
     </div>
 </form>

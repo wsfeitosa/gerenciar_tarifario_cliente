@@ -1,6 +1,12 @@
 $(document).ready(function(){
 	
-	$("#paises_selecionados").empty();
+	$("#sair").click(function(){
+		window.close();
+	});
+	
+	$("#consultar").click(function(){
+		window.location = "/Clientes/gerenciar_tarifario_cliente/index.php/procurar_cliente";		
+	});
 	
 	/** Autocompletar do nome dos clientes **/
 	$("#cliente").autocomplete({
@@ -46,9 +52,7 @@ $(document).ready(function(){
 			erro = true;
 			msg += "Nenhum cliente foi selecionado\n";
 		}	
-		
-		//console.log($("#paises_selecionados option").size());
-		
+						
 		if( $("#paises_selecionados option").size() < 1 )
 		{
 			erro = true;
@@ -65,6 +69,8 @@ $(document).ready(function(){
 			$("#paises_selecionados option").each(function(){
 				$(this).attr("selected", "selected");
 			});
+			
+			alert("Alterações salvas com sucesso!");
 			
 			$("form").submit();
 		}	
